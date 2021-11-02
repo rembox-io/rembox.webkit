@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: lightgray;
+}
+.container.full-height {
+  height: 100vh;
+}
+
+/*# sourceMappingURL=RbContainer.razor.css.map */

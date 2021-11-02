@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rembox.WebKit.Blazor.DemoApp", "Rembox.WebKit.Blazor.DemoApp\Rembox.WebKit.Blazor.DemoApp.csproj", "{8ABC4BE0-45CF-4569-A4B5-627EB40AA9EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rembox.WebKit.Blazor", "Rembox.WebKit.Blazor\Rembox.WebKit.Blazor.csproj", "{BE06CF4B-BEC2-4028-A899-8161A22FD038}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ABC4BE0-45CF-4569-A4B5-627EB40AA9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ABC4BE0-45CF-4569-A4B5-627EB40AA9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ABC4BE0-45CF-4569-A4B5-627EB40AA9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ABC4BE0-45CF-4569-A4B5-627EB40AA9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE06CF4B-BEC2-4028-A899-8161A22FD038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE06CF4B-BEC2-4028-A899-8161A22FD038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE06CF4B-BEC2-4028-A899-8161A22FD038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE06CF4B-BEC2-4028-A899-8161A22FD038}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
