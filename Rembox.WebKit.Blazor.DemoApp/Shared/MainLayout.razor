@@ -4,6 +4,11 @@
 
 <RbSideBar>
     <Header>Rembox WebKit</Header>
+    <CollapsedHeader>RW</CollapsedHeader>
+    <Items>
+        <RbSideBarItem Title="Folder" Icon="folder" />
+        <RbSideBarItem Title="Settings" Icon="settings" />
+    </Items>
     <Content>
         <RbContainer Orientation="@Orientation">
             <RbBlock Size="100px">
@@ -12,7 +17,8 @@
             <RbBlock Size="1">
             </RbBlock>
             <RbBlock Size="200px">
-                <button onclick="@Toogle">toogle</button>
+                <button onclick="@Toggle">toogle</button>
+                <RbIcon Name="settings" />
             </RbBlock>
         </RbContainer>
     </Content>
@@ -22,7 +28,7 @@
 {
     RbContainerOrientation Orientation { get; set; } = RbContainerOrientation.Vertical;
 
-    void Toogle()
+    void Toggle()
     {
         Orientation = Orientation == RbContainerOrientation.Horizontal
             ? RbContainerOrientation.Vertical

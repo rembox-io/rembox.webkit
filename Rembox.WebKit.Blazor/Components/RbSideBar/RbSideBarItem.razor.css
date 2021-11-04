@@ -1,0 +1,34 @@
+.parent-container {
+  height: 47px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.parent-container:hover {
+  background-color: var(--rb-sidebar-hover-bg);
+  color: var(--rb-sidebar-hover-fg);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px 14px 25px;
+  font-size: 0;
+  transition: font-size 0.15s ease;
+}
+.item.expanded {
+  font-size: var(--rb-sidebar-font-size);
+  transition: font-size 0.15s ease;
+}
+.item.expanded ::deep .rb-icon {
+  font-size: 16px !important;
+  transition: font-size 0.15s ease;
+  margin: 0 6px 2px 0;
+}
+.item ::deep .rb-icon {
+  font-size: 24px !important;
+  transition: font-size 0.15s ease;
+  margin: 0 5px 5px 0;
+}
+
+/*# sourceMappingURL=RbSideBarItem.razor.css.map */

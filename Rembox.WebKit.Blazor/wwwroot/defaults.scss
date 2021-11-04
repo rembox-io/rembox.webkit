@@ -3,7 +3,7 @@
 body {
   // navigation
   --rb-nav-header-height: 30px;
-  
+
   // sidebar
   --rb-sidebar-font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --rb-sidebar-header-height: var(--rb-nav-header-height);
@@ -14,4 +14,13 @@ body {
   --rb-sidebar-expanded-width: 200px;
   --rb-sidebar-header-bg: var(--accent-a-bg-100);
   --rb-sidebar-header-fg: var(--accent-a-fg-active);
+  
+  --rb-sidebar-bg: var(--accent-a-bg-100);
+  --rb-sidebar-fg: var(--accent-a-fg-100);
+  --rb-sidebar-hover-bg: var(--accent-a-bg-900);
+  --rb-sidebar-hover-fg: var(--accent-a-fg-active);
+}
+
+.rb-icon {
+  font-size: 24px;
 }

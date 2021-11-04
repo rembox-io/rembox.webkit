@@ -6,17 +6,24 @@ namespace Rembox.WebKit.Blazor.Components
     {
         [Parameter] public RenderFragment? Header { get; set; }
 
+        [Parameter] public RenderFragment? CollapsedHeader { get; set; }
+
         [Parameter] public RenderFragment? Items { get; set; }
         
         [Parameter] public RenderFragment? Footer { get; set; }
         
         [Parameter] public RenderFragment? Content { get; set; }
 
-        public bool IsExpanded { get; set; } = true;
+        public RbSideBarContext Context { get; set; } = new();
+
+        protected override void OnInitialized()
+        {
+            Context.IsExpanded = true;
+        }
 
         public void Toggle()    
         {
-            IsExpanded = !IsExpanded;
+            Context.IsExpanded = !Context.IsExpanded;
         }
     }   
 }

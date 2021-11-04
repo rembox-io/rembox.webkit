@@ -1,0 +1,11 @@
+@using Rembox.WebKit.Blazor.Core
+@* ReSharper disable once CheckNamespace *@
+@namespace Rembox.WebKit.Blazor.Components
+
+<div class="parent-container">
+    <div class="@CssBuilder.CssClasses( "item", Context.IsExpanded ? "expanded" : "" )">
+        <RbIcon Name="@Icon"/>
+        <div class="title">@Title</div>
+    </div>
+
+</div>

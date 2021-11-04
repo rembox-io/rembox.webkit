@@ -3,13 +3,11 @@
   height: 100%;
 
   display: flex;
-
+  color: var(--rb-sidebar-fg);
+  background-color: var(--rb-sidebar-bg);
   font-weight: var(--rb-sidebar-font-weight);
   line-height: var(--rb-sidebar-line-height);
   font-family: var(--rb-sidebar-font-family);
-  font-size: var(--rb-sidebar-font-size);;
-  background-color: var(--accent-a-bg-900);
-  color: var(--accent-a-fg-900);
 
   .content {
     width: 100%;
@@ -29,10 +27,13 @@
       padding: 15px;
       color: var(--rb-sidebar-header-fg);
       background-color: var(--rb-sidebar-header-bg);
-      flex: 0 0 var(--rb-sidebar-header-height)
+      flex: 0 0 var(--rb-sidebar-header-height);
+      white-space: nowrap;
+      overflow: hidden;
     }
     
     .items {
+      margin-top: 25px;
       flex: 1;
     }
     
