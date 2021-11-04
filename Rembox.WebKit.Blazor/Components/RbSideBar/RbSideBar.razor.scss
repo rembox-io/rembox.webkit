@@ -1,0 +1,53 @@
+.rb-sidebar {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  font-weight: var(--rb-sidebar-font-weight);
+  line-height: var(--rb-sidebar-line-height);
+  font-family: var(--rb-sidebar-font-family);
+  font-size: var(--rb-sidebar-font-size);;
+  background-color: var(--accent-a-bg-900);
+  color: var(--accent-a-fg-900);
+
+  .content {
+    width: 100%;
+  }
+
+  .menu {
+    transition: flex 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      color: var(--rb-sidebar-header-fg);
+      background-color: var(--rb-sidebar-header-bg);
+      flex: 0 0 var(--rb-sidebar-header-height)
+    }
+    
+    .items {
+      flex: 1;
+    }
+    
+    .footer {
+      flex: 0;
+    }
+    
+    &.expanded {
+      flex: 0 0 var(--rb-sidebar-expanded-width);
+    }
+  }
+
+  .menu {
+    &.collapsed {
+      flex: 0 0 var(--rb-sidebar-collapsed-width);
+    }
+  }
+}

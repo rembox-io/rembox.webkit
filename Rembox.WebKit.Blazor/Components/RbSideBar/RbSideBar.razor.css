@@ -1,0 +1,43 @@
+.rb-sidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-weight: var(--rb-sidebar-font-weight);
+  line-height: var(--rb-sidebar-line-height);
+  font-family: var(--rb-sidebar-font-family);
+  font-size: var(--rb-sidebar-font-size);
+  background-color: var(--accent-a-bg-900);
+  color: var(--accent-a-fg-900);
+}
+.rb-sidebar .content {
+  width: 100%;
+}
+.rb-sidebar .menu {
+  transition: flex 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.rb-sidebar .menu .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: var(--rb-sidebar-header-fg);
+  background-color: var(--rb-sidebar-header-bg);
+  flex: 0 0 var(--rb-sidebar-header-height);
+}
+.rb-sidebar .menu .items {
+  flex: 1;
+}
+.rb-sidebar .menu .footer {
+  flex: 0;
+}
+.rb-sidebar .menu.expanded {
+  flex: 0 0 var(--rb-sidebar-expanded-width);
+}
+.rb-sidebar .menu.collapsed {
+  flex: 0 0 var(--rb-sidebar-collapsed-width);
+}
+
+/*# sourceMappingURL=RbSideBar.razor.css.map */

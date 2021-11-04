@@ -2,14 +2,30 @@
 
 @using Rembox.WebKit.Blazor.Components
 
-<RbContainer>
-    <RbBlock Size="5">
-        12333
-    </RbBlock>
-    <RbBlock Size="1">
-        12333
-    </RbBlock>
-    <RbBlock Size="100px">
-        12333
-    </RbBlock>
-</RbContainer>
+<RbSideBar>
+    <Header>Rembox WebKit</Header>
+    <Content>
+        <RbContainer Orientation="@Orientation">
+            <RbBlock Size="100px">
+                Rembox WebKit
+            </RbBlock>
+            <RbBlock Size="1">
+            </RbBlock>
+            <RbBlock Size="200px">
+                <button onclick="@Toogle">toogle</button>
+            </RbBlock>
+        </RbContainer>
+    </Content>
+</RbSideBar>
+
+@code
+{
+    RbContainerOrientation Orientation { get; set; } = RbContainerOrientation.Vertical;
+
+    void Toogle()
+    {
+        Orientation = Orientation == RbContainerOrientation.Horizontal
+            ? RbContainerOrientation.Vertical
+            : RbContainerOrientation.Horizontal;
+    }
+}

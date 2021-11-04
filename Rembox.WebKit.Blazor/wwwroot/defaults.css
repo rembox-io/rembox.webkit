@@ -1,3 +1,15 @@
-
+@import "dark-theme.css";
+body {
+  --rb-nav-header-height: 30px;
+  --rb-sidebar-font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --rb-sidebar-header-height: var(--rb-nav-header-height);
+  --rb-sidebar-font-size: 13px;
+  --rb-sidebar-font-weight: 600;
+  --rb-sidebar-line-height: 1.5;
+  --rb-sidebar-collapsed-width: 50px;
+  --rb-sidebar-expanded-width: 200px;
+  --rb-sidebar-header-bg: var(--accent-a-bg-100);
+  --rb-sidebar-header-fg: var(--accent-a-fg-active);
+}
 
 /*# sourceMappingURL=defaults.css.map */

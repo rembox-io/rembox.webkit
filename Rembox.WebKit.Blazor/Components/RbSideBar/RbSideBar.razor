@@ -1,0 +1,25 @@
+ @* ReSharper disable once CheckNamespace *@
+ @namespace Rembox.WebKit.Blazor.Components
+ @using Rembox.WebKit.Blazor.Core;
+ 
+ <div class="rb-sidebar">
+     <div class="@CssBuilder.CssClasses(
+                           "menu",
+                           IsExpanded ? "expanded" : "collapsed"
+                           )">
+         <div class="header">
+             @Header
+         </div>
+         <div class="items">
+             items
+             @Items
+         </div>
+         <div class="footer">
+             <span onclick="@Toggle">footer</span>
+             @Footer
+         </div>
+     </div>
+     <div class="content">
+         @Content
+     </div>
+ </div> 

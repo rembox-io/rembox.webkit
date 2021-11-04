@@ -21,7 +21,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Core" />
+      <Compile Update="Components\RbButton\RbButton.razor.cs">
+        <DependentUpon>RbButton.razor</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Components\RbSideBar\RbSideBar.razor.css">
+        <DependentUpon>RbSideBar.razor.scss</DependentUpon>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -6,13 +6,12 @@ namespace Rembox.WebKit.Blazor.Components
 {
     public partial class RbBlock: ComponentBase
     {
-        public string StyleFlex { get; set; } = "1";
-        
-        
         [Parameter] public string Size { get; set; } = "1";
 
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
+        private string StyleFlex { get; set; } = "1";
+        
         protected override void OnInitialized()
         {
             StyleFlex = GenerateFlex();
