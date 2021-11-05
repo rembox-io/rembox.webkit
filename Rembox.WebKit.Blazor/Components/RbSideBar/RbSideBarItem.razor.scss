@@ -1,39 +1,58 @@
 .parent-container {
-  height: 47px;
-
-  transition: background-color .3s ease, color .3s ease;
-
-  &:hover {
-    background-color: var(--rb-sidebar-hover-bg);
-    color: var(--rb-sidebar-hover-fg);
-    cursor: pointer;
-    transition: background-color .3s ease, color .3s ease;
+  .sub-items-list {
+    
+    height: 0;
+    
+    overflow: hidden;
+    transition: all .4s ease;
+    padding: 0;
+    
+    &.expanded {
+      height: auto;
+      padding: 5px 0;
+    }
+    
+    > .parent-container {
+      .item {
+        padding: 5px 0 5px 30px;
+        font-weight: 200;
+        font-size: 13px;
+      }
+    }
   }
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  padding: 14px 20px 14px 25px;
-  
-  font-size: 0;
-  transition: font-size .15s ease;
-  
-  &.expanded {
 
-    font-size: var(--rb-sidebar-font-size);;
-    transition: font-size .15s ease;
+.item {
+  color: var(--rb-sidebar-fg);
+  background-color: var(--rb-sidebar-bg);
+  transition: background-color .15s ease, color .15s ease, font-size .15s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--rb-sidebar-hover-fg);
+    background-color: var(--rb-sidebar-hover-bg);
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px 14px 20px;
+
+  font-size: 0;
+
+  &.expanded {
+    font-size: var(--rb-sidebar-font-size);
+    justify-content: flex-start;
     
     ::deep .rb-icon {
       font-size: 16px !important;
-      transition: font-size .15s ease;
       margin: 0 6px 2px 0;
     }
   }
-  
+
   ::deep .rb-icon {
     font-size: 24px !important;
-    transition: font-size .15s ease;
-    margin: 0 5px 5px 0;
+    margin: 0;
   }
 }

@@ -1,34 +1,45 @@
-.parent-container {
-  height: 47px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.parent-container .sub-items-list {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0;
 }
-.parent-container:hover {
-  background-color: var(--rb-sidebar-hover-bg);
-  color: var(--rb-sidebar-hover-fg);
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.parent-container .sub-items-list.expanded {
+  height: auto;
+  padding: 5px 0;
+}
+.parent-container .sub-items-list > .parent-container .item {
+  padding: 5px 0 5px 30px;
+  font-weight: 200;
+  font-size: 13px;
 }
 
 .item {
+  color: var(--rb-sidebar-fg);
+  background-color: var(--rb-sidebar-bg);
+  transition: background-color 0.15s ease, color 0.15s ease, font-size 0.15s ease;
+  cursor: pointer;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 14px 20px 14px 25px;
+  padding: 14px 20px 14px 20px;
   font-size: 0;
-  transition: font-size 0.15s ease;
+}
+.item:hover {
+  color: var(--rb-sidebar-hover-fg);
+  background-color: var(--rb-sidebar-hover-bg);
 }
 .item.expanded {
   font-size: var(--rb-sidebar-font-size);
-  transition: font-size 0.15s ease;
+  justify-content: flex-start;
 }
 .item.expanded ::deep .rb-icon {
   font-size: 16px !important;
-  transition: font-size 0.15s ease;
   margin: 0 6px 2px 0;
 }
 .item ::deep .rb-icon {
   font-size: 24px !important;
-  transition: font-size 0.15s ease;
-  margin: 0 5px 5px 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=RbSideBarItem.razor.css.map */

@@ -6,8 +6,18 @@
     <Header>Rembox WebKit</Header>
     <CollapsedHeader>RW</CollapsedHeader>
     <Items>
-        <RbSideBarItem Title="Folder" Icon="folder" />
-        <RbSideBarItem Title="Settings" Icon="settings" />
+        <RbSideBarItem Title="Folder" Icon="folder" NavigateUrl="/folders">
+            <RbSideBarItem Title="Folder-1" NavigateUrl="/folders/folder-1"/>
+            <RbSideBarItem Title="Folder-2" NavigateUrl="/folders/folder-2"/>
+            <RbSideBarItem Title="Folder-3" NavigateUrl="/folders/folder-3"/>
+            <RbSideBarItem Title="Folder-4" NavigateUrl="/folders/folder-4"/>
+        </RbSideBarItem>
+        <RbSideBarItem Title="Settings" Icon="settings" NavigateUrl="/settings">
+            <RbSideBarItem Title="Settings-1" NavigateUrl="/settings/settings-1"/>
+            <RbSideBarItem Title="Settings-2" NavigateUrl="/settings/settings-2"/>
+            <RbSideBarItem Title="Settings-3" NavigateUrl="/settings/settings-3"/>
+            <RbSideBarItem Title="Settings-4" NavigateUrl="/settings/settings-4"/>
+        </RbSideBarItem>
     </Items>
     <Content>
         <RbContainer Orientation="@Orientation">
@@ -18,7 +28,7 @@
             </RbBlock>
             <RbBlock Size="200px">
                 <button onclick="@Toggle">toogle</button>
-                <RbIcon Name="settings" />
+                <RbIcon Name="settings"/>
             </RbBlock>
         </RbContainer>
     </Content>
