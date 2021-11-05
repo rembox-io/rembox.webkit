@@ -4,19 +4,31 @@ body {
   
   // colors
   --rb-grey: #D1DADE;
+  --rb-grey-fg: #5E5E5E;
   --rb-green: #1ab394;
+  --rb-green-fg: white;
   --rb-lightblue: #23c6c8;
+  --rb-lightblue-fg: white;
   --rb-blue: #1c84c6;
+  --rb-blue-fg: white;
   --rb-orange: #f8ac59;
+  --rb-orange-fg: white;
   --rb-red: #ED5565;
+  --rb-red-fg: white;
   
   // severity:
-  --secondary: var(--rb-grey);
-  --primary: var(--rb-blue);
-  --info: var(--rb-lightblue);
-  --success: var(--rb-green);
-  --warning: var(--rb-organge);
-  --danger: var(--rb-red);
+  --rb-secondary: var(--rb-grey);
+  --rb-secondary-fg: var(--rb-grey-fg);
+  --rb-primary: var(--rb-blue);
+  --rb-primary-fg: var(--rb-blue-fg);
+  --rb-info: var(--rb-lightblue);
+  --rb-info-fg: var(--rb-lightblue-fg);
+  --rb-success: var(--rb-green);
+  --rb-success-fg: var(--rb-green-fg);
+  --rb-warning: var(--rb-orange);
+  --rb-warning-fg: var(--rb-orange-fg);
+  --rb-danger: var(--rb-red);
+  --rb-danger-fg: var(--rb-red-fg);
   
   // navigation
   --rb-nav-header-height: 30px;

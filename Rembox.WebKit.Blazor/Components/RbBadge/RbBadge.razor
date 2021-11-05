@@ -1,0 +1,9 @@
+@using Rembox.WebKit.Blazor.Core
+ @* ReSharper disable once CheckNamespace *@
+ @namespace Rembox.WebKit.Blazor.Components
+
+ <div class="rb-badge @Color.ToString().ToLower()" style="@CssBuilder.CssClasses(
+                                                              Size.HasValue ? $"font-size:{Size}px;" : null
+                                                              )">
+     @ChildContent
+ </div>

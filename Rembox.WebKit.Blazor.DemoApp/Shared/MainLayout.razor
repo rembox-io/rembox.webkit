@@ -6,10 +6,10 @@
     <Header>Rembox WebKit</Header>
     <CollapsedHeader>RW</CollapsedHeader>
     <Items>
-        <RbSideBarItem Title="Folder" Icon="folder" Href="/folders">
-            <RbSideBarItem Title="Folder-1" Href="/folders/folder-1"/>
+        <RbSideBarItem Title="Folder" Icon="folder" Href="/folders" Badge="Warning" BadgeSeverity="RbSeverity.Warning">
+            <RbSideBarItem Title="Folder-1" Href="/folders/folder-1" Badge="1 error" BadgeSeverity="RbSeverity.Danger"/>
             <RbSideBarItem Title="Folder-2" Href="/folders/folder-2"/>
-            <RbSideBarItem Title="Folder-3" Href="/folders/folder-3"/>
+            <RbSideBarItem Title="Folder-3" Href="/folders/folder-3" Badge="3 messages"/>
             <RbSideBarItem Title="Folder-4" Href="/folders/folder-4"/>
         </RbSideBarItem>
         <RbSideBarItem Title="Settings1" Icon="settings" Href="/settings">
@@ -26,6 +26,12 @@
         <RbContainer Orientation="@Orientation">
             <RbBlock Size="100px">
                 Rembox WebKit
+                <RbBadge Color="RbSeverity.Secondary">Secondary</RbBadge>
+                <RbBadge Color="RbSeverity.Primary">Primary</RbBadge>
+                <RbBadge Color="RbSeverity.Info">Info</RbBadge>
+                <RbBadge Color="RbSeverity.Success">Success</RbBadge>
+                <RbBadge Color="RbSeverity.Warning">Warning</RbBadge>
+                <RbBadge Color="RbSeverity.Danger">Error</RbBadge>
             </RbBlock>
             <RbBlock Size="1">
             </RbBlock>

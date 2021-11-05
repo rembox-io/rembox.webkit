@@ -6,6 +6,10 @@
     <div class="@CssBuilder.CssClasses("item", Context.IsExpanded ? "expanded" : "")" onclick="@OnItemClicked">
         <RbIcon Name="@Icon"/>
         <div class="title">@Title</div>
+        @if (!string.IsNullOrEmpty(Badge) && Context.IsExpanded)
+        {
+            <RbBadge Color="BadgeSeverity" Size="10">@Badge</RbBadge>
+        }
     </div>
     @if (ChildContent != null)
     {

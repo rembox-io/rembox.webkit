@@ -13,9 +13,13 @@ namespace Rembox.WebKit.Blazor.Components
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
         [Parameter] public string Href { get; set; } = string.Empty;
+        
+        [Parameter] public string Badge { get; set; } = string.Empty;
+
+        [Parameter] public RbSeverity BadgeSeverity { get; set; } = RbSeverity.Secondary;
 
         [Inject] public NavigationManager NavigationManager { get; set; }
-
+        
         public bool IsActive { get; set; }
         
         [CascadingParameter] public RbSideBarContext? Context { get; set; }

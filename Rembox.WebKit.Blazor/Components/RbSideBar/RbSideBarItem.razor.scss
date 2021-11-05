@@ -52,13 +52,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 14px 20px 14px 20px;
+  padding: 14px 0 14px 25px;
 
   font-size: 0;
 
+  .title {
+    flex: 1;
+  }
+  
+  ::deep .rb-badge {
+    margin-right: 10px;
+  }
+  
   &.expanded {
     font-size: var(--rb-sidebar-font-size);
     justify-content: flex-start;
+    padding: 14px 0 14px 20px;
     
     ::deep .rb-icon {
       font-size: 16px !important;

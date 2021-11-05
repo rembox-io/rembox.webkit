@@ -1,0 +1,35 @@
+.rb-badge {
+  padding: 3px 8px;
+  border-radius: 0.25em;
+  display: inline-block;
+  
+  &.secondary {
+    color: var(--rb-secondary-fg);
+    background-color: var(--rb-secondary);
+  }
+
+  &.primary {
+    color: var(--rb-primary-fg);
+    background-color: var(--rb-primary);
+  }
+
+  &.info {
+    color: var(--rb-info-fg);
+    background-color: var(--rb-info);
+  }
+
+  &.success {
+    color: var(--rb-success-fg);
+    background-color: var(--rb-success);
+  }
+  
+  &.warning {
+    color: var(--rb-warning-fg);
+    background-color: var(--rb-warning);
+  }
+  
+  &.danger {
+    color: var(--rb-danger-fg);
+    background-color: var(--rb-danger);
+  }
+}
