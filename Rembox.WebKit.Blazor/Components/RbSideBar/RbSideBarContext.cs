@@ -8,6 +8,8 @@ namespace Rembox.WebKit.Blazor.Components
         private string expandedItem;
         public bool IsExpanded { get; set; }
 
+        public string Location { get; set; }
+
         public string ExpandedItem
         {
             get => expandedItem;

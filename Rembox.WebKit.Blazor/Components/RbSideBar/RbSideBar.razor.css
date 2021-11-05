@@ -34,6 +34,26 @@
 }
 .rb-sidebar .menu .footer {
   flex: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.rb-sidebar .menu .footer.expanded {
+  flex-direction: row;
+}
+.rb-sidebar .menu .footer .footer-item {
+  flex: 1;
+}
+.rb-sidebar .menu .footer .footer-toggle {
+  flex: 0 0 30px;
+  cursor: pointer;
+  display: flex;
+  vertical-align: center;
+  justify-content: center;
+}
+.rb-sidebar .menu .footer .footer-toggle:hover {
+  background-color: var(--rb-sidebar-hover-bg);
+  color: var(--rb-sidebar-hover-fg);
 }
 .rb-sidebar .menu.expanded {
   flex: 0 0 var(--rb-sidebar-expanded-width);

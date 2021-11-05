@@ -2,16 +2,15 @@
 @* ReSharper disable once CheckNamespace *@
 @namespace Rembox.WebKit.Blazor.Components
 
-<div class="parent-container" onclick="@OnItemClicked">
-    <div class="@CssBuilder.CssClasses("item", Context.IsExpanded ? "expanded" : "")">
+<div class="@CssBuilder.CssClasses( "parent-container", IsActive ? "active" : "" )">
+    <div class="@CssBuilder.CssClasses("item", Context.IsExpanded ? "expanded" : "")" onclick="@OnItemClicked">
         <RbIcon Name="@Icon"/>
         <div class="title">@Title</div>
     </div>
-    <div class="@CssBuilder.CssClasses(
-                    "sub-items-list",
-                    IsExpanded && Context.IsExpanded ? "expanded" : ""
-                    )">
-        @ChildContent
-    </div>
+    @if (ChildContent != null)
+    {
+        <div class="@CssBuilder.CssClasses("sub-items-list", IsActive && Context.IsExpanded ? "active" : "")">
+            @ChildContent
+        </div>
+    }
 </div>
-       

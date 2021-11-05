@@ -1,5 +1,17 @@
 @import "dark-theme.css";
 body {
+  --rb-grey: #D1DADE;
+  --rb-green: #1ab394;
+  --rb-lightblue: #23c6c8;
+  --rb-blue: #1c84c6;
+  --rb-orange: #f8ac59;
+  --rb-red: #ED5565;
+  --secondary: var(--rb-grey);
+  --primary: var(--rb-blue);
+  --info: var(--rb-lightblue);
+  --success: var(--rb-green);
+  --warning: var(--rb-organge);
+  --danger: var(--rb-red);
   --rb-nav-header-height: 30px;
   --rb-sidebar-font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --rb-sidebar-header-height: var(--rb-nav-header-height);
@@ -14,6 +26,9 @@ body {
   --rb-sidebar-fg: var(--accent-a-fg-100);
   --rb-sidebar-hover-bg: var(--accent-a-bg-900);
   --rb-sidebar-hover-fg: var(--accent-a-fg-active);
+  --rb-sidebar-active-bg: var(--accent-a-bg-900);
+  --rb-sidebar-active-fg: var(--accent-a-fg-active);
+  --rb-sidebar-active-border: var(--rb-green);
 }
 
 .rb-icon {

@@ -19,7 +19,19 @@
                 @Items
             </div>
             <div class="footer">
-                <span onclick="@Toggle">footer</span>
+                <div class="footer-item">
+                    @Footer
+                </div>
+                <div class="footer-toggle" onclick="@Toggle">
+                    @if (Context.IsExpanded)
+                    {
+                        <RbIcon Name="first_page"/>
+                    }
+                    else
+                    {
+                        <RbIcon Name="last_page"/>
+                    }
+                </div>
             </div>
         </div>
         <div class="content">

@@ -12,24 +12,29 @@ namespace Rembox.WebKit.Blazor.Components
         
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
-        [Parameter] public string NavigateUrl { get; set; } = string.Empty;
+        [Parameter] public string Href { get; set; } = string.Empty;
 
-        public bool IsExpanded { get; set; }
+        [Inject] public NavigationManager NavigationManager { get; set; }
+
+        public bool IsActive { get; set; }
         
         [CascadingParameter] public RbSideBarContext? Context { get; set; }
 
         private void OnItemClicked()
         {
-            Console.WriteLine($"item clicked {NavigateUrl}");
+            Console.WriteLine($"item clicked {Href}");
             if (Context != null)
-                Context.ExpandedItem = NavigateUrl;
+                Context.ExpandedItem = Href;
+            
+            if(!string.IsNullOrEmpty(Href))
+                NavigationManager.NavigateTo(Href);
         }
 
         protected override void OnInitialized()
         {
             Context!.PropertyChanged += (_, _) =>
             {
-                IsExpanded = Context.ExpandedItem == NavigateUrl;
+                IsActive = Context.ExpandedItem.StartsWith(Href);
                 StateHasChanged();
             };
         }

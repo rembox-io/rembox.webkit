@@ -6,19 +6,22 @@
     <Header>Rembox WebKit</Header>
     <CollapsedHeader>RW</CollapsedHeader>
     <Items>
-        <RbSideBarItem Title="Folder" Icon="folder" NavigateUrl="/folders">
-            <RbSideBarItem Title="Folder-1" NavigateUrl="/folders/folder-1"/>
-            <RbSideBarItem Title="Folder-2" NavigateUrl="/folders/folder-2"/>
-            <RbSideBarItem Title="Folder-3" NavigateUrl="/folders/folder-3"/>
-            <RbSideBarItem Title="Folder-4" NavigateUrl="/folders/folder-4"/>
+        <RbSideBarItem Title="Folder" Icon="folder" Href="/folders">
+            <RbSideBarItem Title="Folder-1" Href="/folders/folder-1"/>
+            <RbSideBarItem Title="Folder-2" Href="/folders/folder-2"/>
+            <RbSideBarItem Title="Folder-3" Href="/folders/folder-3"/>
+            <RbSideBarItem Title="Folder-4" Href="/folders/folder-4"/>
         </RbSideBarItem>
-        <RbSideBarItem Title="Settings" Icon="settings" NavigateUrl="/settings">
-            <RbSideBarItem Title="Settings-1" NavigateUrl="/settings/settings-1"/>
-            <RbSideBarItem Title="Settings-2" NavigateUrl="/settings/settings-2"/>
-            <RbSideBarItem Title="Settings-3" NavigateUrl="/settings/settings-3"/>
-            <RbSideBarItem Title="Settings-4" NavigateUrl="/settings/settings-4"/>
+        <RbSideBarItem Title="Settings1" Icon="settings" Href="/settings">
+            <RbSideBarItem Title="Settings-1" Href="/settings/settings-1"/>
+            <RbSideBarItem Title="Settings-2" Href="/settings/settings-2"/>
+            <RbSideBarItem Title="Settings-3" Href="/settings/settings-3"/>
+            <RbSideBarItem Title="Settings-4" Href="/settings/settings-4"/>
         </RbSideBarItem>
     </Items>
+    <Footer>
+        <RbSideBarItem Title="Account" Icon="person" Href="/account" />
+    </Footer>
     <Content>
         <RbContainer Orientation="@Orientation">
             <RbBlock Size="100px">

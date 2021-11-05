@@ -39,6 +39,27 @@
     
     .footer {
       flex: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      &.expanded {
+        flex-direction: row;
+      }
+      
+      .footer-item {
+        flex: 1;
+      }
+      .footer-toggle {
+        flex: 0 0 30px;
+        cursor: pointer;
+        display: flex;
+        vertical-align: center;
+        justify-content: center;
+        &:hover {
+          background-color: var(--rb-sidebar-hover-bg);
+          color: var(--rb-sidebar-hover-fg);
+        }
+      }
     }
     
     &.expanded {
