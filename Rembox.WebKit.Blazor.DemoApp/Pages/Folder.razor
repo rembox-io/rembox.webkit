@@ -1,0 +1,84 @@
+@page "/folders"
+
+@using Rembox.WebKit.Blazor.Components
+
+<h3>Folder</h3>
+
+<RbPopover Position="RbPopoverPosition.BottomCenter" Trigger="RbPopoverTrigger.Hover">
+    <Target>
+        Bottom Center
+    </Target>
+    <Content>
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover 
+    </Content>
+</RbPopover>
+
+<RbPopover Position="RbPopoverPosition.TopCenter" Trigger="RbPopoverTrigger.Click">
+    <Target>Top Center</Target>
+    <Content>
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover 
+    </Content>    
+</RbPopover>
+
+<RbPopover Position="RbPopoverPosition.LeftCenter">
+    <Target>Left Center</Target>
+    <Content>
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover 
+    </Content>    
+</RbPopover>
+
+<RbPopover Position="RbPopoverPosition.RightCenter">
+    <Target>Right Center<br/>asdasdasdasd<br /></Target>
+    <Content>
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover 
+    </Content>    
+</RbPopover>
+
+<br />
+
+<button onclick="@ToggleCustomRigger">Content visible: @IsContentVisible</button>
+<RbPopover Position="RbPopoverPosition.BottomCenter" 
+           Trigger="RbPopoverTrigger.Custom"
+           ShowArrow="true"
+           Header="CustomAce header"
+           IsContentVisible="@IsContentVisible">
+    <Target>Custom trigger</Target>
+    <Content>
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover <br /> 
+        This_is_big_content_for_popover 
+    </Content>    
+</RbPopover>
+
+@code
+{
+    public bool IsContentVisible { get; set; }
+
+    void ToggleCustomRigger()
+    {
+        IsContentVisible = !IsContentVisible;
+    }
+}

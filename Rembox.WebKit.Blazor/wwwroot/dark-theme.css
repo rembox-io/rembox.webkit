@@ -1,4 +1,8 @@
 .rb-dark-theme {
+  --rb-bg-100: #fff;
+  --rb-bg-500: #f3f3f4;
+  --rb-border-500: #e7eaec;
+  --rb-border-700: rgba(0, 0, 0, 0.2);;
   --accent-a-bg-100: #323F4F;
   --accent-a-bg-900: #2C3845;
   --accent-a-fg-100: #A8B1C0;

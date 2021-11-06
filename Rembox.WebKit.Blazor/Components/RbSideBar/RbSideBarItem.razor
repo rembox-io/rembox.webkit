@@ -11,7 +11,7 @@
             <RbBadge Color="BadgeSeverity" Size="10">@Badge</RbBadge>
         }
     </div>
-    @if (ChildContent != null)
+    @if (ChildContent != null && Context.IsExpanded)
     {
         <div class="@CssBuilder.CssClasses("sub-items-list", IsActive && Context.IsExpanded ? "active" : "")">
             @ChildContent

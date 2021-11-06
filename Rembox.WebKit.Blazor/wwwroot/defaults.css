@@ -24,7 +24,7 @@ body {
   --rb-warning-fg: var(--rb-orange-fg);
   --rb-danger: var(--rb-red);
   --rb-danger-fg: var(--rb-red-fg);
-  --rb-nav-header-height: 30px;
+  --rb-nav-header-height: 60px;
   --rb-sidebar-font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --rb-sidebar-header-height: var(--rb-nav-header-height);
   --rb-sidebar-font-size: 13px;

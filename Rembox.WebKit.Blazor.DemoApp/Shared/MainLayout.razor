@@ -20,20 +20,19 @@
         </RbSideBarItem>
     </Items>
     <Footer>
-        <RbSideBarItem Title="Account" Icon="person" Href="/account" />
+        <RbSideBarItem Title="Account" Icon="person" Href="/account"/>
     </Footer>
     <Content>
+
+
         <RbContainer Orientation="@Orientation">
-            <RbBlock Size="100px">
-                Rembox WebKit
-                <RbBadge Color="RbSeverity.Secondary">Secondary</RbBadge>
-                <RbBadge Color="RbSeverity.Primary">Primary</RbBadge>
-                <RbBadge Color="RbSeverity.Info">Info</RbBadge>
-                <RbBadge Color="RbSeverity.Success">Success</RbBadge>
-                <RbBadge Color="RbSeverity.Warning">Warning</RbBadge>
-                <RbBadge Color="RbSeverity.Danger">Error</RbBadge>
+            <RbBlock Size="10px">
+                <RbNavBar>
+                    <RbNavBarBlock></RbNavBarBlock>
+                </RbNavBar>
             </RbBlock>
             <RbBlock Size="1">
+                @Body
             </RbBlock>
             <RbBlock Size="200px">
                 <button onclick="@Toggle">toogle</button>
