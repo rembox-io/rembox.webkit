@@ -26,7 +26,6 @@ namespace Rembox.WebKit.Blazor.Components
 
         private void OnItemClicked()
         {
-            Console.WriteLine($"item clicked {Href}");
             if (Context != null)
                 Context.ExpandedItem = Href;
             

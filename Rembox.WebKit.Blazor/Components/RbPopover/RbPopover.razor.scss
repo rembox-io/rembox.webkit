@@ -1,5 +1,4 @@
 .rb-target {
-  border: solid 1px red;
   display: block;
 }
 
@@ -27,6 +26,17 @@
   background-color: var(--rb-bg-100);
   border: solid 1px var(--rb-border-700);
   border-radius: 5px;
+
+  &.tooltip {
+    background-color: black;
+
+    .content {
+      color: white !important;
+      font-size: 10px;
+      white-space: nowrap;
+      padding: 5px;
+    }
+  }
 
   &.visible {
     opacity: 1;
@@ -113,6 +123,7 @@
 
   &.arrow-bottomcenter {
     margin-top: 10px;
+
     ::after {
       content: "";
       position: absolute;
@@ -127,7 +138,7 @@
       transform: rotate(225deg);
     }
   }
-  
+
   &.arrow-bottomcenter .header::after {
     background-color: var(--rb-bg-500) !important;
     z-index: 100;
@@ -142,13 +153,13 @@
     background-color: var(--rb-bg-500);
     padding: 0.2rem 0.75rem;
   }
-  
+
   .header + .content {
     ::after {
       background-color: var(--rb-bg-500);
     }
   }
-  
+
   .content {
     padding: 0.5rem 0.75rem;
     color: #212529;
@@ -156,5 +167,11 @@
     font-weight: 400;
     line-height: 1.5;
     font-size: .8rem;
+  }
+}
+
+.rb-container.tooltip {
+  .content::after {
+    background-color: black;
   }
 }

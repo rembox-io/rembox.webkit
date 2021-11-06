@@ -1,0 +1,67 @@
+@page "/ui-components/popovers"
+@using Rembox.WebKit.Blazor.Components
+
+@inject NavigationManager navigationManager 
+
+<h3>Popovers</h3>
+
+<hr/>
+
+<div>
+    <RbPopover MinWidth="200px">
+        <Target>
+            <button>Popover Bottom</button>
+        </Target>
+        <Content>
+            This is example with popover <br/>
+            On bottom enter of target
+        </Content>
+    </RbPopover>
+
+    <RbPopover MinWidth="200px" Position="RbPopoverPosition.TopCenter">
+        <Target>
+            <button>Popover Top</button>
+        </Target>
+        <Content>
+            This is example with popover <br/>
+            On top enter of target
+        </Content>
+    </RbPopover>
+
+    <RbPopover MinWidth="200px" Position="RbPopoverPosition.LeftCenter">
+        <Target>
+            <button>Popover Left</button>
+        </Target>
+        <Content>
+            This is example with popover <br/>
+            On left enter of target
+        </Content>
+    </RbPopover>
+
+    <RbPopover MinWidth="200px" Position="RbPopoverPosition.RightCenter">
+        <Target>
+            <button>Popover Right</button>
+        </Target>
+        <Content>
+            This is example with popover <br/>
+            On top enter of target
+        </Content>
+    </RbPopover>
+</div>
+
+<hr/>
+
+<div>
+    <RbTooltip Text="RbTooltip on left" Position="RbPopoverPosition.LeftCenter">
+        <button>Tooltip left</button>
+    </RbTooltip>
+    <RbTooltip Text="RbTooltip on right" Position="RbPopoverPosition.RightCenter">
+        <button>Tooltip right</button>
+    </RbTooltip>
+    <RbTooltip Text="RbTooltip on top" Position="RbPopoverPosition.TopCenter">
+        <button>Tooltip top</button>
+    </RbTooltip>
+    <RbTooltip Text="RbTooltip on bottom" Position="RbPopoverPosition.BottomCenter">
+        <button>Tooltip bottom</button>
+    </RbTooltip>
+</div>

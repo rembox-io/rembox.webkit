@@ -20,19 +20,14 @@ namespace Rembox.WebKit.Blazor.Components
 
         public RbSideBarContext Context { get; set; } = new();
 
-        protected override async Task OnInitializedAsync()
-        {
-            NavigationManager.LocationChanged += (_, args) =>
-            {
-                Context.Location = args.Location;
-                Console.WriteLine($"Url: {args.Location}");
-                Console.WriteLine($"Uri: {NavigationManager.Uri}");
-            };
-        }
-
         protected override void OnInitialized()
         {
             Context.IsExpanded = true;
+            Context.Location = "/" + NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+            NavigationManager.LocationChanged += (_, args) =>
+            {
+                Context.Location = args.Location;
+            };
         }
 
         public void Toggle()    

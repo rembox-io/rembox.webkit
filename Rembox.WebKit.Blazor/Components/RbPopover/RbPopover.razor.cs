@@ -13,6 +13,8 @@ namespace Rembox.WebKit.Blazor.Components
 
         [Parameter] public string Header { get; set; }
         
+        [Parameter] public bool AsTooltip { get; set; }
+        
         [Parameter] public bool IsContentVisible
         {
             get => isContentVisible;
@@ -24,6 +26,8 @@ namespace Rembox.WebKit.Blazor.Components
         }
 
         [Parameter] public bool ShowArrow { get; set; } = true;
+
+        [Parameter] public string MinWidth { get; set; }
         
         [Parameter] public RbPopoverTrigger Trigger { get; set; } = RbPopoverTrigger.Click;
 

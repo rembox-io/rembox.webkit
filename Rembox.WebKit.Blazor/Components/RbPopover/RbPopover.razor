@@ -7,7 +7,15 @@
                  Trigger == RbPopoverTrigger.Hover ? "hoverable" : ""
                  )"> 
      <span class="rb-target" onclick="@OnTargetClicked">@Target</span>
-     <div class="@CssBuilder.CssClasses("rb-container", isContentVisible ? "visible" : "", Position.ToString().ToLower(), ShowArrow ? $"arrow-{Position.ToString().ToLower()}" : "")">
+     <div class="@CssBuilder.CssClasses("rb-container", 
+                     isContentVisible ? "visible" : "", 
+                     Position.ToString().ToLower(), 
+                     AsTooltip ? "tooltip": "",
+                     ShowArrow ? $"arrow arrow-{Position.ToString().ToLower()}" : "")"
+          style="@CssBuilder.Styles(
+                      !string.IsNullOrEmpty(MinWidth) ? $"min-width:{MinWidth}" : ""
+                      )"
+          >
          @if (!string.IsNullOrEmpty(@Header))
          {
              <div class="header">

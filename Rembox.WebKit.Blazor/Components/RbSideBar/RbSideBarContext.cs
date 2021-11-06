@@ -15,7 +15,6 @@ namespace Rembox.WebKit.Blazor.Components
             get => expandedItem;
             set
             {
-                Console.WriteLine($"expandedItem changed from {expandedItem} to {value}");
                 expandedItem = value;
                 OnPropertyChanged();
             }
