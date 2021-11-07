@@ -7,6 +7,7 @@
     <CollapsedHeader>RW</CollapsedHeader>
     <Items>
         <RbSideBarItem Title="UI Components" Icon="grid_view" Href="/ui-components">
+            <RbSideBarItem Title="Layout" Href="/ui-components/layout" />
             <RbSideBarItem Title="Popovers" Href="/ui-components/popovers" />
         </RbSideBarItem>
         <RbSideBarItem Title="Settings1" Icon="settings" Href="/settings">
@@ -20,21 +21,19 @@
         <RbSideBarItem Title="Account" Icon="person" Href="/account"/>
     </Footer>
     <Content>
-
-
         <RbContainer Orientation="@Orientation">
-            <RbBlock Size="10px">
+            <RbContainerBlock Size="10px" BlockType="RbContainerBlockType.Empty">
                 <RbNavBar>
                     <RbNavBarBlock></RbNavBarBlock>
                 </RbNavBar>
-            </RbBlock>
-            <RbBlock Size="1">
+            </RbContainerBlock>
+            <RbContainerBlock Size="1" BlockType="RbContainerBlockType.Empty">
                 @Body
-            </RbBlock>
-            <RbBlock Size="200px">
+            </RbContainerBlock>
+            <RbContainerBlock Size="0">
                 <button onclick="@Toggle">toogle</button>
                 <RbIcon Name="settings"/>
-            </RbBlock>
+            </RbContainerBlock>
         </RbContainer>
     </Content>
 </RbSideBar>

@@ -1,6 +1,6 @@
 .rb-navbar {
   background-color: var(--rb-bg-500);
-  border-bottom: solid 1px var(--rb-bg-500);
+  border-bottom: solid 1px var(--rb-border-500);
   height: var(--rb-nav-header-height);
   display: flex;
   align-items: center;

@@ -1,0 +1,31 @@
+.rb-container-panel {
+  background-color: var(--rb-bg-100);
+  border: solid 1px var(--rb-border-500);
+  margin-bottom: 15px;
+}
+.rb-container-panel.size-quarter {
+  flex: 0 0 calc(25% - 10px);
+}
+.rb-container-panel.size-third {
+  flex: 0 0 calc(33% - 10px);
+}
+.rb-container-panel.size-half {
+  flex: 0 0 calc(50% - 10px);
+}
+.rb-container-panel.size-threequarters {
+  flex: 0 0 calc(75% - 10px);
+}
+.rb-container-panel.size-full {
+  flex: 0 0 calc(100% - 2px);
+}
+
+.rb-container-panel-header {
+  padding: 10px 15px;
+  border-bottom: solid 1px var(--rb-border-500);
+}
+
+.rb-container-panel-body {
+  padding: 10px 15px;
+}
+
+/*# sourceMappingURL=RbContainerPanel.razor.css.map */

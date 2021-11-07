@@ -1,0 +1,105 @@
+@page "/ui-components/layout"
+
+@using Rembox.WebKit.Blazor.Components
+
+<div class="rb-wrapper">
+    <RbContainer>
+        <RbContainerBlock BlockType="RbContainerBlockType.Content">
+            <h2>Layout framework example</h2>
+        </RbContainerBlock>
+        <RbContainerBlock BlockType="RbContainerBlockType.Columns" Size="1">
+
+            <!-- row 1 -->
+            <RbContainerPanel Header="Quart size" Size="RbContainerPanelSize.Quarter">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <RbContainerPanel Header="Three quartes size" Size="RbContainerPanelSize.ThreeQuarters">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <!-- row 2 -->
+            <RbContainerPanel Header="Third size" Size="RbContainerPanelSize.Third">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <RbContainerPanel Header="Third size" Size="RbContainerPanelSize.Third">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <RbContainerPanel Header="Third size" Size="RbContainerPanelSize.Third">
+                <div style="height: 400px; vertical-align: center; horiz-align: center">
+                    some content
+                </div>
+
+            </RbContainerPanel>
+
+
+            <!-- row 3 -->
+            <RbContainerPanel Header="Half size" Size="RbContainerPanelSize.Half">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <RbContainerPanel Header="Half size" Size="RbContainerPanelSize.Half">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+            </RbContainerPanel>
+
+            <!-- row 4 -->
+            <RbContainerPanel Header="Full Size" Size="RbContainerPanelSize.Full">
+                <div style="min-height: 300px">
+                <RbPopover MinWidth="200px" Trigger="RbPopoverTrigger.Hover">
+                    <Target>
+                        <button>hello world</button>
+                    </Target>
+                    <Content>
+                        <RbBadge Color="RbSeverity.Success">Some badge</RbBadge>
+                    </Content>
+                </RbPopover>
+                </div>
+            </RbContainerPanel>
+
+        </RbContainerBlock>
+    </RbContainer>
+</div>

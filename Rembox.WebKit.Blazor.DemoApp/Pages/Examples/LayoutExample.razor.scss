@@ -1,0 +1,6 @@
+.rb-wrapper {
+  height: 100%;
+  ::deep .container {
+    background-color: lightsteelblue;
+  }
+}

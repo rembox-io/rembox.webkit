@@ -1,0 +1,15 @@
+@using Rembox.WebKit.Blazor.Core
+@namespace Rembox.WebKit.Blazor.Components
+
+<div class="@CssBuilder.CssClasses(
+                "rb-container-panel",
+                $"size-{Size.ToString().ToLower()}"
+                )">
+    @if (!string.IsNullOrEmpty(Header))
+    {
+        <div class="rb-container-panel-header h3 no-margin">@Header</div>    
+    }   
+    <div class="rb-container-panel-body">
+        @ChildContent
+    </div>
+</div>

@@ -4,13 +4,15 @@ using Microsoft.AspNetCore.Components;
 // ReSharper disable once CheckNamespace
 namespace Rembox.WebKit.Blazor.Components
 {
-    public partial class RbBlock: ComponentBase
+    public partial class RbContainerBlock: ComponentBase
     {
-        [Parameter] public string Size { get; set; } = "1";
+        [Parameter] public string Size { get; set; } = "0";
 
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
-        private string StyleFlex { get; set; } = "1";
+        [Parameter] public RbContainerBlockType BlockType { get; set; } = RbContainerBlockType.Content;
+        
+        private string StyleFlex { get; set; } = "0";
         
         protected override void OnInitialized()
         {
@@ -33,5 +35,12 @@ namespace Rembox.WebKit.Blazor.Components
 
             return "1";
         }
+    }
+
+    public enum RbContainerBlockType
+    {
+        Empty,
+        Content,
+        Columns
     }
 }

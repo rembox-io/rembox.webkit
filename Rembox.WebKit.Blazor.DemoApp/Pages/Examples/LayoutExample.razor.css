@@ -1,0 +1,8 @@
+.rb-wrapper {
+  height: 100%;
+}
+.rb-wrapper ::deep .container {
+  background-color: lightsteelblue;
+}
+
+/*# sourceMappingURL=LayoutExample.razor.css.map */

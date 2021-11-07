@@ -1,0 +1,10 @@
+@using Rembox.WebKit.Blazor.Core
+ @* ReSharper disable once CheckNamespace *@
+ @namespace Rembox.WebKit.Blazor.Components
+
+ <div class="@CssBuilder.CssClasses(
+                 "rb-block",
+                 BlockType.ToString().ToLower()
+                 )" style="flex: @StyleFlex;">
+     @ChildContent
+ </div>
