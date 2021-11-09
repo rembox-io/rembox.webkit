@@ -1,34 +1,62 @@
+@using Rembox.WebKit.Blazor.Core
 @typeparam TValue
 
 @namespace Rembox.WebKit.Blazor.Components
 
-<div class="rb-select">
-    <div class="selector">
-        <div class="text-input">
-            @if (SelectedValue == null)
+@if (IsOpen)
+{
+    <div class="backdrop" onclick="@ToggleIsOpen">123123123</div>
+}
+
+@if (!string.IsNullOrEmpty(SetupError))
+{
+    <div class="error">RbSelectInput: @SetupError</div>
+}
+else
+{
+    <div class="@CssBuilder.CssClasses( "rb-select", IsOpen ? "is-open" : "")"
+         onblur="@ToggleIsOpen">
+        <div class="selector" onclick="@ToggleIsOpen">
+            <div class="text-input">
+                @if (SelectedValue == null)
+                {
+                    <span>no value selected...</span>
+                }
+                else
+                {
+                    @if (IsMultiselect)
+                    {
+                        <div class="multi-values">
+                            @foreach (var value in SelectedValues)
+                            {
+                                <div class="multi-value" onclick="@(() => OnItemSelected(value))">
+                                    <div class="text">@ItemText(value)</div><RbIcon Name="close" Size="12"/>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        @GetItemView(SelectedValue)
+                    }
+                }
+            </div>
+            <div class="expander">
+                <RbIcon Name="expand_more"/>
+            </div>
+        </div>
+        <div class="items">
+            @if (Items.Length == 0)
             {
-                <span>no value selected...</span>
+                <div class="no-items">no items provided</div>
             }
             else
             {
-                @GetItemView(SelectedValue)
+                foreach (var item in FilteredItems)
+                {
+                    <div class="item" onclick="@(() => OnItemSelected(item))">@GetItemView(item)</div>
+                }
             }
         </div>
-        <div class="expander">
-            <RbIcon Name="expand_more"/>
-        </div>
     </div>
-    <div class="items">
-        @if (Items.Length == 0)
-        {
-            <div class="no-items">no items provided</div>
-        }
-        else
-        {
-            foreach (var item in Items)
-            {
-                <div class="item" onclick="@(() => OnItemSelected(item))">@GetItemView(item)</div>
-            }
-        }
-    </div>
-</div>
+}

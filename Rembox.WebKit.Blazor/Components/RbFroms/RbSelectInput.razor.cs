@@ -35,6 +35,33 @@ namespace Rembox.WebKit.Blazor.Components
 
         [Parameter] public List<TValue> SelectedValues { get; set; } = new();
 
+        [Parameter] public bool IsOpen { get; set; }
+
+        protected override void OnInitialized()
+        {
+            if (!IsMultiselect)
+            {
+                if (ItemText == null && ItemTemplate == null)
+                {
+                    SetupError = "ItemText or ItemTemplate selectors should be provided";
+                }
+            }
+            else
+            {
+                if (ItemText == null)
+                {
+                    SetupError = "With IsMultiselect mode ItemText selector should be provided"; 
+                }
+            }
+        }
+
+        private TValue[] FilteredItems => Items.Where(p => !SelectedValues.Contains(p)).ToArray();
+        
+        private void ToggleIsOpen()
+        {
+            IsOpen = !IsOpen;
+        }
+
         private RenderFragment GetItemView(TValue value)
         {
             if (ItemTemplate != null)
@@ -51,23 +78,32 @@ namespace Rembox.WebKit.Blazor.Components
 
         private async void OnItemSelected(TValue item)
         {
-            Console.WriteLine($"item selected {GetItemView(item)}");
-            
-            if(SelectedValues.Contains(item))
-                return;
-            
-            if(!IsMultiselect)
+            if (IsMultiselect)
+            {
+                if (SelectedValues.Contains(item))
+                    SelectedValues.Remove(item);
+                else
+                    SelectedValues.Add(item);
+            }
+            else
+            {
+                if(SelectedValues.Contains(item))
+                    return;
                 SelectedValues.Clear();
-                
-            SelectedValues.Add(item);
-
+                SelectedValues.Add(item);
+            }
+            
             if (SelectedValueChanged.HasDelegate)
                 await SelectedValueChanged.InvokeAsync(item);
             
             if (SelectedValuesChanged.HasDelegate)
                 await SelectedValuesChanged.InvokeAsync(SelectedValues);
+
+            IsOpen = false;
             
             StateHasChanged();
         }
+
+        private string SetupError { get; set; }
     }
 }

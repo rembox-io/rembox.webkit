@@ -5,12 +5,14 @@
   padding: 0;
   width: 100%;
   position: relative;
+  min-height: 34px;
 
   display: flex;
 
   .selector {
     display: flex;
     width: 100%;
+    cursor: pointer;
     
     .text-input {
       flex: 1;
@@ -24,9 +26,13 @@
       justify-content: center;
       border-left: solid 1px var(--border);
     }
+    
+    &:hover {
+      --border: var(--rb-blue-lighten);
+    }
   }
 
-  &:hover {
+  &.is-open {
     .items {
       visibility: visible !important;
     }
@@ -38,7 +44,7 @@
     width: 100%;
     border: solid 1px var(--border);
     border-top: 0;
-    top: 35px;
+    top: calc(100% + 1px);
     left: -1px;
     max-height: 200px;
     overflow-y: auto;
@@ -58,4 +64,47 @@
       }
     }
   }
+}
+
+.multi-values{
+  display: flex;
+  margin-top: 1px;
+  overflow-x: hidden;
+  max-width: 100%;
+  flex-wrap: wrap;
+  .multi-value {
+    cursor: pointer;
+    display: flex;
+    margin-right: 5px;
+    background-color: var(--rb-green);
+    color: var(--rb-blue-fg);
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-bottom: 3px;
+    .text {
+      margin: 0 6px;
+    }
+    ::deep .rb-icon {
+      font-size: 12px;
+      padding: 5px 3px 0 0;
+    }
+  }
+}
+
+.error {
+  border: solid 1px var(--rb-red);
+  background-color: var(--rb-red-lighten);
+  color: var(--rb-red);
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.backdrop {
+  opacity: 0.001;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }

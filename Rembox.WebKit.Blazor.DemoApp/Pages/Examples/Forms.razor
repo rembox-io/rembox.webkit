@@ -15,7 +15,13 @@
                     Name: @context.Title, Age: @context.Age
                 </ItemTemplate>
             </RbSelectInput>
-            @(Selecteditem?.Title ?? "no item selected")
+            <br/>
+            
+            <RbSelectInput TValue="RbSelectInputItem" 
+                           Items="Items1"
+                           IsMultiselect="true" 
+                           ItemText="@(p => p.Title)" />
+            
         </RbContainerPanel>
     </RbContainerBlock>
 </RbContainer>
