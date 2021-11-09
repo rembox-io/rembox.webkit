@@ -1,0 +1,43 @@
+@page "/ui-components/forms"
+@using Rembox.WebKit.Blazor.Components
+
+<RbContainer>
+    <RbContainerBlock BlockType="RbContainerBlockType.Content">
+        <h2>Forms usage examples</h2>
+    </RbContainerBlock>
+    <RbContainerBlock Size="1" BlockType="RbContainerBlockType.Columns">
+        <RbContainerPanel Header="TextBox playground" Size="RbContainerPanelSize.Quarter">
+            <RbTextBox/>
+            <br/>
+            <br/>
+            <RbSelectInput TValue="RbSelectInputItem" Items="@Items1" @bind-SelectedValue="@Selecteditem">
+                <ItemTemplate>
+                    Name: @context.Title, Age: @context.Age
+                </ItemTemplate>
+            </RbSelectInput>
+            @(Selecteditem?.Title ?? "no item selected")
+        </RbContainerPanel>
+    </RbContainerBlock>
+</RbContainer>
+
+@code {
+
+    private readonly RbSelectInputItem[] Items1 =
+    {
+        new() { Title = "item 1", Age = 1 },
+        new() { Title = "item 2", Age = 22 },
+        new() { Title = "item 3", Age = 32 },
+        new() { Title = "item 4", Age = 45 },
+        new() { Title = "item 5" },
+        new() { Title = "item 6" },
+    };
+
+    public RbSelectInputItem Selecteditem { get; set; }
+
+    public class RbSelectInputItem
+    {
+        public string Title { get; set; }
+        public int Age { get; set; }
+    }
+
+}

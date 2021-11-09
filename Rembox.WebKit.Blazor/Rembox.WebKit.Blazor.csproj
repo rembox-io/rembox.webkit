@@ -18,6 +18,7 @@
       <_ContentIncludedByDefault Remove="Shared\MainLayout.razor" />
       <_ContentIncludedByDefault Remove="Shared\NavMenu.razor" />
       <_ContentIncludedByDefault Remove="Shared\SurveyPrompt.razor" />
+      <_ContentIncludedByDefault Remove="Components\RbFroms\RbTextBox.razor" />
     </ItemGroup>
 
     <ItemGroup>
