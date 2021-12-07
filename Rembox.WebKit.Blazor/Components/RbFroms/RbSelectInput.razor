@@ -18,26 +18,54 @@ else
          onblur="@ToggleIsOpen">
         <div class="selector" onclick="@ToggleIsOpen">
             <div class="text-input">
-                @if (SelectedValue == null)
+                @if (IsAutoComplete)
                 {
-                    <span>no value selected...</span>
-                }
-                else
-                {
-                    @if (IsMultiselect)
+                    if (IsMultiselect)
                     {
-                        <div class="multi-values">
-                            @foreach (var value in SelectedValues)
-                            {
-                                <div class="multi-value" onclick="@(() => OnItemSelected(value))">
-                                    <div class="text">@ItemText(value)</div><RbIcon Name="close" Size="12"/>
-                                </div>
-                            }
-                        </div>
+                        
                     }
                     else
                     {
-                        @GetItemView(SelectedValue)
+                        if (SelectedValue != null && !IsOpen)
+                        {
+                            @GetItemView(SelectedValue)
+                        }
+                    }
+                    
+                    if (IsMultiselect || SelectedValue == null || IsOpen)
+                    {
+                        <input id="autocompleteInput"
+                               @ref="@autocompleteTextReference"
+                               bind-Value="@AutocompleteText"
+                               type="text"
+                               oninput="@AutocompleteTextChanged"
+                               placeholder="type here to search..."
+                               class="autocomplete"/>
+                    }
+                }
+                else
+                {
+                    @if (SelectedValue == null)
+                    {
+                        <span>no value selected...</span>
+                    }
+                    else
+                    {
+                        @if (IsMultiselect)
+                        {
+                            <div class="multi-values">
+                                @foreach (var value in SelectedValues)
+                                {
+                                    <div class="multi-value" onclick="@(() => OnItemSelected(value))">
+                                        <div class="text">@ItemText(value)</div><RbIcon Name="close" Size="12"/>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            @GetItemView(SelectedValue)
+                        }
                     }
                 }
             </div>

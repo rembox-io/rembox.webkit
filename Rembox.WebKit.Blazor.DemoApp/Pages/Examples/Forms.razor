@@ -16,12 +16,28 @@
                 </ItemTemplate>
             </RbSelectInput>
             <br/>
-            
-            <RbSelectInput TValue="RbSelectInputItem" 
+
+            <RbSelectInput TValue="RbSelectInputItem"
                            Items="Items1"
-                           IsMultiselect="true" 
-                           ItemText="@(p => p.Title)" />
-            
+                           IsMultiselect="true"
+                           ItemText="@(p => p?.Title)"/>
+            <br/>
+
+            <RbSelectInput TValue="RbSelectInputItem"
+                           Items="Items1"
+                           IsAutoComplete="true"
+                           ItemText="@(p => p?.Title)"/>
+
+            <br/>
+
+            <RbSelectInput TValue="RbSelectInputItem"
+                           Items="Items1"
+                           IsAutoComplete="true"
+                           IsMultiselect="true"
+                           ItemText="@(p => p?.Title)"/>
+
+            <br/>
+
         </RbContainerPanel>
     </RbContainerBlock>
 </RbContainer>
@@ -30,12 +46,12 @@
 
     private readonly RbSelectInputItem[] Items1 =
     {
-        new() { Title = "item 1", Age = 1 },
-        new() { Title = "item 2", Age = 22 },
-        new() { Title = "item 3", Age = 32 },
-        new() { Title = "item 4", Age = 45 },
-        new() { Title = "item 5" },
-        new() { Title = "item 6" },
+        new() { Title = "item 1 abc", Age = 1 },
+        new() { Title = "item 2 cde", Age = 22 },
+        new() { Title = "item 3 def", Age = 32 },
+        new() { Title = "item 4 efg", Age = 45 },
+        new() { Title = "item 5 fgh" },
+        new() { Title = "item 6 ghi" },
     };
 
     public RbSelectInputItem Selecteditem { get; set; }

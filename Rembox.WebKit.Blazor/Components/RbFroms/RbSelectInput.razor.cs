@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
+// ReSharper disable once CheckNamespace
 namespace Rembox.WebKit.Blazor.Components
 {
     public partial class RbSelectInput<TValue>: ComponentBase
@@ -16,7 +19,11 @@ namespace Rembox.WebKit.Blazor.Components
         [Parameter] public RenderFragment<TValue>? ItemTemplate { get; set; }
 
         [Parameter] public bool IsMultiselect { get; set; }
-        
+
+        [Parameter] public bool IsAutoComplete { get; set; }
+
+        [Parameter] public Func<string, Task<TValue[]>>? AutoComplete { get; set; }
+            
         [Parameter] public TValue[] Items { get; set; } = Array.Empty<TValue>();
 
         [Parameter] public TValue? SelectedValue
@@ -37,8 +44,18 @@ namespace Rembox.WebKit.Blazor.Components
 
         [Parameter] public bool IsOpen { get; set; }
 
+        [Inject] public IJSRuntime? JsRuntime { get; set; }
+        
         protected override void OnInitialized()
         {
+            SetupError = String.Empty;
+            
+            if (IsAutoComplete && ItemText == null && AutoComplete == null)
+            {
+                SetupError = "With IsAutoComplete option ItemText or AutoComplete values should be provided";
+                return;
+            }
+            
             if (!IsMultiselect)
             {
                 if (ItemText == null && ItemTemplate == null)
@@ -56,10 +73,21 @@ namespace Rembox.WebKit.Blazor.Components
         }
 
         private TValue[] FilteredItems => Items.Where(p => !SelectedValues.Contains(p)).ToArray();
+
+        private TValue[] AutoCompleteItems { get; set; } = Array.Empty<TValue>();
         
-        private void ToggleIsOpen()
+        private async void ToggleIsOpen()
         {
             IsOpen = !IsOpen;
+            if (IsOpen && IsAutoComplete && autocompleteTextReference.Context != null)
+            {
+                await Task.Delay(TimeSpan.FromMilliseconds(10));
+                
+                //if (SelectedValue != null && !IsMultiselect && ItemText != null)
+                    AutocompleteText = ItemText(SelectedValue);
+                await autocompleteTextReference.FocusAsync();
+                StateHasChanged();
+            }
         }
 
         private RenderFragment GetItemView(TValue value)
@@ -104,6 +132,28 @@ namespace Rembox.WebKit.Blazor.Components
             StateHasChanged();
         }
 
+        private async void AutocompleteTextChanged(ChangeEventArgs obj)
+        {
+            IsOpen = true;
+            if (ItemText != null)
+            {
+                AutoCompleteItems = FilteredItems
+                    .Where(p => ItemText(p).ToLower().Contains(obj.Value?.ToString() ?? string.Empty))
+                    .ToArray();
+            }
+            else
+            {
+                if (AutoComplete != null)
+                    AutoCompleteItems = await AutoComplete(obj.Value?.ToString() ?? string.Empty);
+            }
+        }
+        
         private string SetupError { get; set; }
+
+        private ElementReference autocompleteTextReference;
+
+        private string AutocompleteText { get; set; }
+        
+        private bool isAutocompleteInProgress;
     }
 }
